@@ -1,0 +1,146 @@
+git init
+git remote add origin https://github.com/na3ap4uk/VCS-advanced.git
+echo # test >> README.md
+git status
+git add README.md
+git commit -m "first commit"
+git push -u origin master
+git checkout architecture
+git status
+
+echo # assets>> index.html
+mkdir assets
+mkdir uploads
+cd assets
+echo # assets >> all.js
+echo # assets >> css.js
+cd ..
+git status
+git add assets
+git status
+git commit -m "new files"
+git push -u origin architecture
+cd uploads
+echo # ignore>> .gitignore
+git status
+cd ..
+git status
+git add uploads
+git status
+git commit -m "ignore"
+git push -u origin architecture
+git checkout master
+git merge architecture
+git branch -d architecture
+
+git checkout -b newbranch
+git checkout master
+mkdir css
+cd css
+echo # code >> styles.css
+git status
+cd ..
+git add css
+git commit -m "new css folder and file"
+git push -u origin master
+echo # code >> page.html
+git status
+git add page.html
+git commit -m "new html file"
+git push -u origin master
+git checkout newbranch
+git rebase newbranch
+echo # new >> 2ndpage.html
+git status
+git add 2ndpage.html
+git status
+git commit -m "2-nd page html file"
+git push -u origin newbranch
+git checkout master
+git merge newbranch
+git branch -d newbrach
+
+echo # new >> 3rdpage.html
+echo # new >> 4thpage.html
+git commit -m "new pages"
+cd css
+echo # help >> helpers.css
+cd ..
+git add css
+git status
+git commit -m "helpers"
+git tag "v.01"
+git push origin v.01
+
+git submodule add https://github.com/na3ap4uk/VCS-advanced
+git status
+git add .gitmodules
+git add VCS-advanced
+git commit -m "submodule"
+git push -u origin master
+
+git checkout -b gh-pages
+echo # some content >> index.html
+git add index.html
+git status
+git commit -m "new index.html"
+git push origin gh-pages
+echo # changes >> index.html
+git add index.html
+git status
+git commit -m "changes"
+git push origin gh-pages
+
+git checkout master
+echo # This is first version >> file.txt
+git checkout gh-pages
+git merge master
+// making changes manualy in folder
+git status
+git add file.txt
+git commit -m "modified file"
+git push origin gh-pages
+git checkout master
+// making changes manualy in folder
+git add file.txt
+git commit -m "tryin to make a conflict"
+git checkout gh-pages
+git merge master
+//CONFLICT <content>: ....
+git status
+git merge --abort
+git merge master
+//CONFLICT <content>: ....
+git add file.txt
+git commit -m "Tryin to resolve a conflict"
+git merge master
+//Success
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
